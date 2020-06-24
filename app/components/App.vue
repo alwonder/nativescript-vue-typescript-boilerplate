@@ -5,24 +5,35 @@
       <Label class="message" :text="msg" col="0" row="0" />
       <Label :text="count" col="0" row="0" />
       <Button @tap="increaseCount">Нажми</Button>
+      <Button @tap="navigateToMenu">В меню</Button>
     </GridLayout>
   </Page>
 </template>
 
 <script lang="ts">
-  export default {
-    data() {
-      return {
-        msg: 'Hello World!',
-        count: 0,
-      }
-    },
-    methods: {
-      increaseCount() {
-        this.count++;
-      }
-    }
+import { Component, Vue } from 'vue-property-decorator';
+import { Action, Getter, namespace } from 'vuex-class';
+import Menu from './Menu.vue';
+
+@Component
+export default class App extends Vue {
+  msg: string = 'Hello World';
+  count: number = 0;
+
+  increaseCount() {
+    this.count++;
   }
+
+  navigateToMenu() {
+    // @ts-ignore
+    this.$navigateTo(Menu, {
+      transition: {
+        name:'fade',
+        duration: 200
+      },
+    });
+  }
+}
 </script>
 
 <style scoped>
