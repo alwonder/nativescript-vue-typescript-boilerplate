@@ -42,7 +42,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     semi: 'off',
-    'max-len': ['error', { code: 120 }],
+    'max-len': ['error', { code: 100 }],
     '@typescript-eslint/semi': ['error'],
     '@typescript-eslint/no-explicit-any': ['off'],
     '@typescript-eslint/no-empty-function': ['off'],
