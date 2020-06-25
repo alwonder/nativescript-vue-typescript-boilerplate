@@ -25,7 +25,6 @@ export default class App extends Vue {
   }
 
   navigateToMenu() {
-    // @ts-ignore
     this.$navigateTo(Menu, {
       transition: {
         name: 'fade',
