@@ -4,13 +4,14 @@ module.exports = {
   env: {
     node: true,
   },
-  
+
   globals: {
     TNS_ENV: true,
   },
 
   parserOptions: {
     parser: '@typescript-eslint/parser',
+    project: './tsconfig.json',
   },
 
   plugins: [
@@ -30,7 +31,8 @@ module.exports = {
   ],
 
   extends: [
-    "eslint:recommended",
+    'airbnb-typescript/base',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/essential',
     '@vue/typescript',
@@ -44,9 +46,11 @@ module.exports = {
     '@typescript-eslint/semi': ['error'],
     '@typescript-eslint/no-explicit-any': ['off'],
     '@typescript-eslint/no-empty-function': ['off'],
-    '@typescript-eslint/ban-ts-ignore': ['off'],
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/ban-ts-comment': ['off'],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'class-methods-use-this': ['off'],
-    "no-global-assign": ["error", {"exceptions": ["JKHBH"]}]
+    'import/no-extraneous-dependencies': ['error', {
+      'packageDir': './'
+    }],
   },
 };

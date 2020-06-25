@@ -17,18 +17,19 @@ import Menu from './Menu.vue';
 @Component
 export default class App extends Vue {
   msg = 'Hello World';
+
   count = 0;
 
   increaseCount() {
-    this.count++;
+    this.count += 1;
   }
 
   navigateToMenu() {
     // @ts-ignore
     this.$navigateTo(Menu, {
       transition: {
-        name:'fade',
-        duration: 200
+        name: 'fade',
+        duration: 200,
       },
     });
   }
