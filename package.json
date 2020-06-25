@@ -1,7 +1,7 @@
 {
-  "name": "nativescript-vue-starter",
+  "name": "nativescript-vue-ts-boilerplate",
   "version": "1.0.0",
-  "description": "A native application built with NativeScript-Vue",
+  "description": "A boilerplate to make native applications with Typescript and NativeScript-Vue",
   "author": "Sergey Eliseev <thefury014@gmail.com>",
   "license": "MIT",
   "nativescript": {
@@ -15,8 +15,8 @@
     }
   },
   "scripts": {
-    "serve:android": "tns run android",
-    "serve:ios": "tns run ios --device \"iPhone 11\"",
+    "serve:android": "tns debug android",
+    "serve:ios": "tns debug ios --device \"iPhone 11\"",
     "devtools": "npx vue-devtools",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue ./app/"
   },
