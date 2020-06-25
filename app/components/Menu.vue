@@ -9,10 +9,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Action, Getter, namespace } from 'vuex-class';
 
 @Component
 export default class Menu extends Vue {
+  mounted() {
+    console.log(TNS_ENV);
+  }
 }
 </script>
 

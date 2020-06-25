@@ -12,13 +12,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Action, Getter, namespace } from 'vuex-class';
 import Menu from './Menu.vue';
 
 @Component
 export default class App extends Vue {
-  msg: string = 'Hello World';
-  count: number = 0;
+  msg = 'Hello World';
+  count = 0;
 
   increaseCount() {
     this.count++;
