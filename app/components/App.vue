@@ -4,24 +4,32 @@
     <GridLayout columns="*" rows="*">
       <Label class="message" :text="msg" col="0" row="0" />
       <Label :text="count" col="0" row="0" />
-      <Button @tap="increaseCount">Нажми</Button>
-      <Button @tap="navigateToMenu">В меню</Button>
+      <Button @tap="increaseCount">Increment count</Button>
+      <Button @tap="navigateToMenu">Next page</Button>
     </GridLayout>
   </Page>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
+import { INCREMENT_COUNT } from '@/store/modules/counter';
 import Menu from './Menu.vue';
+
+const counterModule = namespace('counter');
 
 @Component
 export default class App extends Vue {
   msg = 'Hello World';
 
-  count = 0;
+  @counterModule.State
+  readonly count: number;
+
+  @counterModule.Mutation
+  [INCREMENT_COUNT]: () => void;
 
   increaseCount() {
-    this.count += 1;
+    this[INCREMENT_COUNT]();
   }
 
   navigateToMenu() {
